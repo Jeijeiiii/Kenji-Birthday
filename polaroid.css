@@ -8,7 +8,7 @@
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
-  z-index: 9999;
+  z-index: 50;
 }
 
 .polaroidmodaloverlay.open {
@@ -61,77 +61,33 @@
   transition: background-color 0.25s;
 }
 
-
-/* polaroid stuff*/
-
-.polaroidarea {
-  position: relative;
-  width: 400px;
-  height: 450px;
-  overflow: hidden;
-  display: none; /* HIDE BY DEFAULT */
-}
-
-.polaroidarea.show {
-  display: block; /* only show when user says yes */
-}
-
+/* Polaroid picture slide-up */
 .polaroidpictures {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  position: fixed;
+  bottom: -100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10%);
+  transition: bottom 0.9s ease;
+  z-index: 60;
+  pointer-events: none;
 }
 
 .polaroidpictures.show {
+  bottom: 10%;
+  pointer-events: auto;
+}
+
+/* Fade-in effect for image */
+.polaroidpictures .photo1 {
+  width: 320px;
+  max-width: 90vw;
+  top: 80px;
   display: block;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.polaroidpictures.show .photo1 {
   opacity: 1;
 }
 
-
-.polaroid {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-image: url('Images/photo.png'); /* one single frame */
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-}
-
-.photo {
-  width: 280px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-top: 40px;
-}
-
-.caption {
-  font-family: 'Caveat', cursive;
-  font-size: 18px;
-  margin-top: 20px;
-  color: #444;
-}
-
-.polaroidcontainer {
-  display: none;
-}
-.polaroidcontainer.show {
-  display: block;
-}
-
-.polaroidarrows {
-  display: none;
-}
-.polaroidarrows.show {
-  display: flex;
-  justify-content: space-between;
-  width: 400px;
-  position: relative;
-  transform: translateY(-20px);
-}

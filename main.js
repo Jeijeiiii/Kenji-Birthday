@@ -228,7 +228,7 @@ radioOverlay.addEventListener('click', (e) => {
 });
 }
 
- 
+
 // 🎶 SONG SYSTEM
 const songs = [
   {
@@ -271,7 +271,7 @@ const songs = [
     title: "bad - wave to earth",
     cover: "Songs/bad.png",
     audio: "Songs/bad.mp3",
-    lyrics: "How could my day be bad when I'm with you? You're the only one who makes me laugh."
+    lyrics: "How could my day be bad when I'm with you? You're the only one who makes me laugh. So how can my day be bad?"
   },
 ];
 
@@ -363,7 +363,6 @@ leftArrow.addEventListener('click', () => slide('left'));
 
 
 
-
 const cakeImg = document.querySelector('.cakecake');
 const cakeOverlay = document.getElementById('cakemodaloverlay');
 const cakeYes = document.getElementById('cakemodalyes');
@@ -427,26 +426,11 @@ if (cakeImg && cakeOverlay && cakeYes && cakeNo && cakeContainer) {
       setTimeout(() => burst.pause(), 3000);
 
       if (confetti) {
-        // If confetti is an <img>, force-reload the src to restart the GIF.
-        if (confetti.tagName === 'IMG') {
-          const src = confetti.getAttribute('src') || '';
-          const base = src.split('?')[0];
-          confetti.setAttribute('src', base + '?t=' + Date.now());
-          // Ensure it's visible (in case CSS relies on inline display)
-          confetti.style.display = '';
-        } else {
-          // If confetti uses background-image, force a reflow and reapply to restart.
-          const bg = window.getComputedStyle(confetti).backgroundImage;
-          confetti.style.backgroundImage = 'none';
-          // force reflow
-          void confetti.offsetWidth;
-          confetti.style.backgroundImage = bg;
-        }
+      confetti.classList.add('show');
+      setTimeout(() => confetti.classList.remove('show'), 4000);
 
-        confetti.classList.add('show');
-        setTimeout(() => confetti.classList.remove('show'), 4000);
-      }
     }
+  }
   });
 
   cakeOverlay.addEventListener('click', (e) => {
@@ -508,8 +492,6 @@ if (polaroid && polaroidOverlay && polaroidYes && polaroidNo && polaroidPictures
       if (modalBox) modalBox.classList.add('hidden');
       polaroidPictures.classList.remove('show');
     }
-  });
-}
   });
 }
 

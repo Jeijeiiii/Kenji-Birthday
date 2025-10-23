@@ -256,12 +256,6 @@ const songs = [
     lyrics: "It's from the way that you move and everything that you do and after that it's when I realize that I love you."
   },
   {
-    title: "The Only Exception - paramore",
-    cover: "Songs/exception.jpg",
-    audio: "Songs/exception.mp3",
-    lyrics: "And up until now, I had sworn to myself that I'm content with loneliness because none of it was ever worth the risk. Well, you are the only exception"
-  },
-  {
     title: "Nothing - Bruno Major",
     cover: "Songs/nothing.png",
     audio: "Songs/nothing.mp3",
@@ -279,12 +273,6 @@ const songs = [
     audio: "Songs/bad.mp3",
     lyrics: "How could my day be bad when I'm with you? You're the only one who makes me laugh. So how can my day be bad?"
   },
-  {
-    title: "Line Without a Hook - Ricky Montgomery",
-    cover: "Songs/line.jpg",
-    audio: "Songs/line.mp3",
-    lyrics: "Oh, baby, I am a wreck when I'm without you. I need you here to stay."
-  }
 ];
 
 let currentSong = 0;
@@ -561,5 +549,6 @@ function slidePolaroid(direction) {
 
 polaroidRightArrow.addEventListener('click', () => slidePolaroid('right'));
 polaroidLeftArrow.addEventListener('click', () => slidePolaroid('left'));
+
 
 loadPolaroid(currentPolaroid);

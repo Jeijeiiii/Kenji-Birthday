@@ -494,6 +494,3 @@ if (polaroid && polaroidOverlay && polaroidYes && polaroidNo && polaroidPictures
     }
   });
 }
-
-
-

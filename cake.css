@@ -1,0 +1,103 @@
+/* Modal overlay */
+.cakemodaloverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 50;
+}
+
+.cakemodaloverlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cakemodal {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f4ff 100%);
+  padding: 20px 22px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-align: center;
+  max-width: 320px;
+}
+
+.cakemodal.hidden {
+  display: none;
+}
+
+.cakemodalquestion {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: #222;
+}
+
+.cakemodalbuttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.cakemodalbutton2 {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cakemodalyes {
+  background: #ff98c3;
+  color: white;
+  transition: background-color 0.25s;
+}
+
+.cakemodalno {
+  background: transparent;
+  border: 2px solid #ccc;
+  transition: background-color 0.25s;
+}
+
+/* Candle states */
+.cakecontainer {
+  position: relative;
+}
+.candlefire1, .candlefire2 {
+  transition: opacity 0.5s ease;
+}
+.candles-blown .candlefire1,
+.candles-blown .candlefire2 {
+  opacity: 0; /* hide flames when blown */
+  pointer-events: none;
+}
+
+.candles-blown .cakecake {
+  filter: brightness(0.95);
+}
+
+/* When relit */
+.candles-lit .candlefire1,
+.candles-lit .candlefire2 {
+  opacity: 1;
+}
+
+.confetti {
+  position: absolute;
+  top: -200px;
+  left: -180px;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 13; 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(255, 230, 131, 0.8));
+}
+
+.confetti.show {
+  opacity: 1;
+}

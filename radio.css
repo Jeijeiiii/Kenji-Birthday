@@ -1,0 +1,191 @@
+/* Modal overlay */
+.radiomodaloverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 50;
+}
+
+.radiomodaloverlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.radiomodal {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f4ff 100%);
+  padding: 20px 22px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-align: center;
+  max-width: 320px;
+}
+
+.radiomodal.hidden {
+  display: none;
+}
+
+.radiomodalquestion {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: #222;
+}
+
+.radiomodalbuttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.radiomodalbutton2 {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.radiomodalyes {
+  background: #ff98c3;
+  color: white;
+  transition: background-color 0.25s;
+}
+
+.radiomodalno {
+  background: transparent;
+  border: 2px solid #ccc;
+  transition: background-color 0.25s;
+}
+
+/* CD + Paper group */
+.musicset {
+  position: fixed;
+  bottom: -200%;
+  left: 50%;
+  transform: translateX(-50%) translateY(85px);
+  transition: bottom 1.2s ease;
+  z-index: 70; /* above overlay (overlay uses 50 in modal.css) */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.musicset.open {
+  bottom: 0;
+  pointer-events: auto;
+  opacity: 1;
+}
+
+
+.cd {
+  width: 450px;
+  transform: translateY(368px) translateX(-150px); 
+  transition: transform 1s ease;
+}
+
+.cd.spin {
+  animation: spin-with-translate 4s linear infinite;
+}
+
+@keyframes spin-with-translate {
+  from { transform: translateY(368px) translateX(-150px) rotate(0deg); }
+  to   { transform: translateY(368px) translateX(-150px) rotate(360deg); }
+}
+
+
+.paperarea {
+  position: relative;
+  width: 420px;
+  height: 550px;
+  overflow: hidden;
+  border-radius: 10px;
+  transform: scale(0.9) rotate(10deg) translateX(80px) translateY(-100px);
+}
+
+.paper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('Images/lyricpaper.png');
+  background-size: cover;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cover {
+  width: 190px;
+  border-radius: 8px;
+  transform: translateX(19px) translateY(20px) rotate(-2deg);
+}
+
+.songtitle {
+  margin-top: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  max-width: 10em;
+  transform: translateX(19px) translateY(25px) rotate(-2deg);
+}
+
+.lyrics {
+  font-style: italic;
+  font-size: 20px;
+  margin: 10px 0;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5em;
+  max-width:15em; 
+  transform: rotate(-2deg) translateX(20px);
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 456px;
+  position: relative;
+  transform: translateY(-400px) translateX(76px) rotate(10deg);
+}
+
+.arrow {
+  background: #ff98c3;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.playpause{
+  background: #ff98c3;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: background 0.25s;
+  transform: translateY(20px) translateX(20px);
+}
+
+.arrow:hover {
+  background: #ffb4d3;
+}
+

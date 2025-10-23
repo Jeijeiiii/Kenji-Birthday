@@ -1,0 +1,137 @@
+.polaroidmodaloverlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  z-index: 9999;
+}
+
+.polaroidmodaloverlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.polaroidmodal {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f4ff 100%);
+  padding: 20px 22px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  text-align: center;
+  max-width: 320px;
+}
+
+.polaroidmodal.hidden {
+  display: none;
+}
+
+.polaroidmodalquestion {
+  margin: 0 0 12px 0;
+  font-size: 18px;
+  color: #222;
+}
+
+.polaroidmodalbuttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.polaroidmodalbutton2 {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.polaroidmodalyes {
+  background: #ff98c3;
+  color: white;
+  transition: background-color 0.25s;
+}
+
+.polaroidmodalno {
+  background: transparent;
+  border: 2px solid #ccc;
+  transition: background-color 0.25s;
+}
+
+
+/* polaroid stuff*/
+
+.polaroidarea {
+  position: relative;
+  width: 400px;
+  height: 450px;
+  overflow: hidden;
+  display: none; /* HIDE BY DEFAULT */
+}
+
+.polaroidarea.show {
+  display: block; /* only show when user says yes */
+}
+
+.polaroidpictures {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.polaroidpictures.show {
+  display: block;
+  opacity: 1;
+}
+
+
+.polaroid {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('Images/photo.png'); /* one single frame */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.photo {
+  width: 280px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.caption {
+  font-family: 'Caveat', cursive;
+  font-size: 18px;
+  margin-top: 20px;
+  color: #444;
+}
+
+.polaroidcontainer {
+  display: none;
+}
+.polaroidcontainer.show {
+  display: block;
+}
+
+.polaroidarrows {
+  display: none;
+}
+.polaroidarrows.show {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  position: relative;
+  transform: translateY(-20px);
+}

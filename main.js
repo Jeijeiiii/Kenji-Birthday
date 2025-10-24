@@ -271,7 +271,7 @@ const songs = [
     title: "bad - wave to earth",
     cover: "Songs/bad.png",
     audio: "Songs/bad.mp3",
-    lyrics: "How could my day be bad when I'm with you? You're the only one who makes me laugh. So how can my day be bad?"
+    lyrics: "How could my day be bad when I'm with you? You're the only one who makes me laugh."
   },
 ];
 
@@ -494,3 +494,4 @@ if (polaroid && polaroidOverlay && polaroidYes && polaroidNo && polaroidPictures
     }
   });
 }
+
